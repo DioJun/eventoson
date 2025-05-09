@@ -1,17 +1,33 @@
 # Sistema de Gerenciamento de Eventos (Java Console)
 
-Esta é uma aplicação de linha de comando desenvolvida em Java para gerenciar eventos pessoais. O usuário pode cadastrar, listar, excluir e modificar eventos. Os dados são armazenados em arquivos de texto, permitindo persistência entre sessões.
+Este é um sistema de gerenciamento de eventos desenvolvido em Java, com interface de linha de comando. Ele permite que os usuários gerenciem eventos pessoais, incluindo cadastro, listagem, exclusão e atualização de eventos. Os dados são armazenados em um arquivo de texto para garantir persistência entre sessões.
 
 ## Funcionalidades
 
-- ✅ Cadastro de eventos
-- ✅ Listagem de todos os eventos cadastrados
-- ✅ Listagem de eventos futuros
-- ✅ Exclusão de eventos por índice
-- ✅ Modificação de eventos existentes
-- ✅ Validação da data e hora do evento no momento do cadastro
+- ✅ Cadastro de eventos com nome, endereço, categoria, data/hora e descrição.
+- ✅ Listagem de todos os eventos cadastrados.
+- ✅ Listagem de eventos futuros (apenas eventos com data/hora posterior ao momento atual).
+- ✅ Exclusão de eventos por índice.
+- ✅ Atualização de eventos existentes.
+- ✅ Persistência de dados em arquivo (`events.data`).
+- ✅ Validação de data e hora no momento do cadastro.
 
-### Requisitos
+## Estrutura do Projeto
 
-- Java 8 ou superior
-- IDE ou terminal com suporte a compilação e execução Java
+- `src/Main.java`: Classe principal que inicializa o sistema.
+- `src/view/Sistema.java`: Gerencia a interação com o usuário.
+- `src/controller/GerenciadorEventos.java`: Controla as operações de CRUD e manipulação de eventos.
+- `src/model/Evento.java`: Representa a entidade "Evento".
+- `src/model/Usuario.java`: Representa a entidade "Usuário".
+- `src/utils/Utils.java`: Contém utilitários, como formatação de data/hora.
+
+## Requisitos
+
+- **Java 8** ou superior.
+- IDE ou terminal com suporte à compilação e execução de código Java.
+
+## Como Executar
+
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/sistema-gerenciamento-eventos.git

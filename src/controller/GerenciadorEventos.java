@@ -18,18 +18,12 @@ public class GerenciadorEventos {
 
     private void carregarEventos() {
         Path caminho = Paths.get(ARQUIVO);
-
         if (!Files.exists(caminho)) return;
 
         try (BufferedReader reader = Files.newBufferedReader(caminho)) {
-            String linha;
-            while ((linha = reader.readLine()) != null) {
-                if (linha.trim().isEmpty()) continue;
-                Evento evento = Evento.fromDataString(linha);
-                if (evento != null) {
-                    eventos.add(evento);
-                }
-            }
+            reader.lines()
+                    .map(Evento::fromDataString)
+                    .forEach(eventos::add);
         } catch (IOException e) {
             System.out.println("Erro ao ler o arquivo: " + e.getMessage());
         }
@@ -37,10 +31,14 @@ public class GerenciadorEventos {
 
     private void salvarEventos() {
         try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(ARQUIVO))) {
-            for (Evento e : eventos) {
-                writer.write(e.toDataString());
-                writer.newLine();
-            }
+            eventos.forEach(evento -> {
+                try {
+                    writer.write(evento.toDataString());
+                    writer.newLine();
+                } catch (IOException e) {
+                    System.out.println("Erro ao salvar evento: " + e.getMessage());
+                }
+            });
         } catch (IOException e) {
             System.out.println("Erro ao salvar eventos: " + e.getMessage());
         }
