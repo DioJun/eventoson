@@ -11,16 +11,7 @@ Esta é uma aplicação de linha de comando desenvolvida em Java para gerenciar 
 - ✅ Modificação de eventos existentes
 - ✅ Validação da data e hora do evento no momento do cadastro
 
-## Como Executar
-
 ### Requisitos
 
 - Java 8 ou superior
 - IDE ou terminal com suporte a compilação e execução Java
-
-### Compilação
-
-Compile os arquivos:
-
-```bash
-javac model/*.java Sistema.java GerenciadorEventos.java
