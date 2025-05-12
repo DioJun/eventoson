@@ -27,9 +27,3 @@ Este é um sistema de gerenciamento de eventos desenvolvido em Java, com interfa
 
 - **Java 8** ou superior.
 - IDE ou terminal com suporte à compilação e execução de código Java.
-
-## Como Executar
-
-1. Clone este repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/sistema-gerenciamento-eventos.git
